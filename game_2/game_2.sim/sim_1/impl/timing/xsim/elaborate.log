@@ -1,0 +1,94 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot top_module_time_impl -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.top_module xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "top_module_time_impl.sdf", for root module "top_module".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "top_module_time_impl.sdf", for root module "top_module".
+Time Resolution for simulation is 1ps
+Compiling module simprims_ver.FDRE_default
+Compiling module simprims_ver.RB18_INTERNAL_VLOG(DOA_REG=1,DOB...
+Compiling module simprims_ver.RAMB18E1(DOA_REG=1,DOB_REG=1,INI...
+Compiling module xil_defaultlib.blk_mem_gen_0
+Compiling module simprims_ver.x_lut3_mux8
+Compiling module simprims_ver.LUT3
+Compiling module simprims_ver.LUT6
+Compiling module simprims_ver.BUFG
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module simprims_ver.LUT4
+Compiling module simprims_ver.x_lut2_mux4
+Compiling module simprims_ver.LUT2
+Compiling module simprims_ver.FDRE(XON="FALSE")
+Compiling module simprims_ver.LUT5
+Compiling module xil_defaultlib.xpm_cdc_gray__parameterized1__4
+Compiling module xil_defaultlib.xpm_cdc_gray__4
+Compiling module simprims_ver.FDSE_default
+Compiling module simprims_ver.CARRY4
+Compiling module simprims_ver.x_lut1_mux2
+Compiling module simprims_ver.LUT1
+Compiling module simprims_ver.SRL16E_default
+Compiling module simprims_ver.RB18_INTERNAL_VLOG(DOA_REG=1,DOB...
+Compiling module simprims_ver.RAMB18E1(DOA_REG=1,DOB_REG=1,RAM...
+Compiling module simprims_ver.FDSE(XON="FALSE")
+Compiling module xil_defaultlib.xpm_cdc_single__9
+Compiling module xil_defaultlib.xpm_cdc_single__8
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__9
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__8
+Compiling module xil_defaultlib.fifo_generator_0__xdcDup__1
+Compiling module xil_defaultlib.xpm_cdc_gray__parameterized1__5
+Compiling module xil_defaultlib.xpm_cdc_gray__5
+Compiling module xil_defaultlib.xpm_cdc_single__11
+Compiling module xil_defaultlib.xpm_cdc_single__10
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__11
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__10
+Compiling module xil_defaultlib.fifo_generator_0__xdcDup__2
+Compiling module xil_defaultlib.xpm_cdc_gray__parameterized1__6
+Compiling module xil_defaultlib.xpm_cdc_gray__6
+Compiling module xil_defaultlib.xpm_cdc_single__13
+Compiling module xil_defaultlib.xpm_cdc_single__12
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__13
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__12
+Compiling module xil_defaultlib.fifo_generator_0__xdcDup__3
+Compiling module xil_defaultlib.xpm_cdc_gray__parameterized1
+Compiling module xil_defaultlib.xpm_cdc_gray
+Compiling module xil_defaultlib.xpm_cdc_single
+Compiling module xil_defaultlib.xpm_cdc_single__14
+Compiling module xil_defaultlib.xpm_cdc_sync_rst
+Compiling module xil_defaultlib.xpm_cdc_sync_rst__14
+Compiling module xil_defaultlib.fifo_generator_0
+Compiling module simprims_ver.RB36_INTERNAL_VLOG(DOA_REG=1,RDA...
+Compiling module simprims_ver.RAMB36E1(DOA_REG=1,INITP_01=256'...
+Compiling module simprims_ver.FDCE_default
+Compiling module simprims_ver.RB36_INTERNAL_VLOG(DOA_REG=1,RDA...
+Compiling module simprims_ver.RAMB36E1(DOA_REG=1,INITP_01=256'...
+Compiling module simprims_ver.RB36_INTERNAL_VLOG(DOA_REG=1,RDA...
+Compiling module simprims_ver.RAMB36E1(DOA_REG=1,INITP_00=256'...
+Compiling module simprims_ver.RB36_INTERNAL_VLOG(DOA_REG=1,RDA...
+Compiling module simprims_ver.RAMB36E1(DOA_REG=1,INIT_00=256'b...
+Compiling module xil_defaultlib.blk_mem_gen_1
+Compiling module simprims_ver.MUXF7
+Compiling module xil_defaultlib.VGA
+Compiling module simprims_ver.OBUFDS
+Compiling module xil_defaultlib.encode
+Compiling module xil_defaultlib.encode__parameterized0
+Compiling module xil_defaultlib.encode__parameterized1
+Compiling module simprims_ver.OSERDESE2(DATA_RATE_TQ="SDR",DAT...
+Compiling module simprims_ver.OSERDESE2(DATA_RATE_TQ="SDR",DAT...
+Compiling module xil_defaultlib.serdes_10_to_1
+Compiling module xil_defaultlib.serdes_10_to_1_0
+Compiling module xil_defaultlib.serdes_10_to_1_1
+Compiling module xil_defaultlib.serdes_10_to_1_2
+Compiling module xil_defaultlib.srldelay
+Compiling module xil_defaultlib.hdmi_tx_v1_0
+Compiling module xil_defaultlib.hdmi_tx_0
+Compiling module xil_defaultlib.top_module
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_module_time_impl

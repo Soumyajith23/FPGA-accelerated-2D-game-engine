@@ -1,0 +1,11 @@
+set_property IOSTANDARD LVCMOS33 [get_ports rst]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property PACKAGE_PIN F14 [get_ports clk]
+set_property PACKAGE_PIN R14 [get_ports hdmi_clk_p]
+set_property PACKAGE_PIN R15 [get_ports {hdmi_tx_p[0]}]
+set_property PACKAGE_PIN R16 [get_ports {hdmi_tx_p[1]}]
+set_property PACKAGE_PIN N15 [get_ports {hdmi_tx_p[2]}]
+set_property PACKAGE_PIN V2 [get_ports rst]
+
+set_property IOSTANDARD LVCMOS33 [get_ports btn_trigger_in]
+set_property PACKAGE_PIN J5 [get_ports btn_trigger_in]
