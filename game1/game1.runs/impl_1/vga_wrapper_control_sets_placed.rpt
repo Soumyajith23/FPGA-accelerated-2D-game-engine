@@ -1,0 +1,95 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Sun Jun 29 07:27:57 2025
+| Host         : SOUMYAJIT running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file vga_wrapper_control_sets_placed.rpt
+| Design       : vga_wrapper
+| Device       : xc7s50
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    17 |
+|    Minimum number of control sets                        |    17 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    75 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    17 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     6 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              77 |           35 |
+| No           | No                    | Yes                    |              42 |           22 |
+| No           | Yes                   | No                     |              52 |           27 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              43 |           12 |
+| Yes          | Yes                   | No                     |              55 |           22 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------+----------------------------+------------------------------+------------------+----------------+--------------+
+|      Clock Signal      |        Enable Signal       |       Set/Reset Signal       | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------+----------------------------+------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG         |                            |                              |                2 |              2 |         1.00 |
+|  clk_IBUF_BUFG         | rgb1/cn/count5[7]_i_1_n_0  | rst_IBUF                     |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG         | rgb1/cn/count5[15]_i_1_n_0 | rst_IBUF                     |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG         | rgb1/cn/count5[11]_i_1_n_0 | rst_IBUF                     |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG         | rgb1/cn/count5[3]_i_1_n_0  | rst_IBUF                     |                1 |              4 |         4.00 |
+|  clk_wiz/inst/clk_out1 |                            | rst_IBUF                     |                4 |              4 |         1.00 |
+|  clk_IBUF_BUFG         | rgb1/jump_counter          | rst_IBUF                     |                2 |              7 |         3.50 |
+|  clk_wiz/inst/clk_out1 |                            | vga/hcnt[9]_i_1_n_0          |                5 |              9 |         1.80 |
+|  clk_IBUF_BUFG         | rgb1/ball_y                | rst_IBUF                     |                4 |             10 |         2.50 |
+|  clk_IBUF_BUFG         | rgb1/ball_x_offset         | rst_IBUF                     |                4 |             10 |         2.50 |
+|  clk_wiz/inst/clk_out1 | vga/vcnt[9]_i_1_n_0        | rst_IBUF                     |                7 |             10 |         1.43 |
+|  clk_wiz/inst/clk_out1 |                            | vga/hcnt_reg[6]_0[0]         |               12 |             16 |         1.33 |
+|  clk_wiz/inst/clk_out1 | vga/vcnt_reg[6]_2          | rst_IBUF                     |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG         |                            | rgb1/move_counter[0]_i_1_n_0 |                6 |             23 |         3.83 |
+|  clk_IBUF_BUFG         | rgb1/cn/count0             | rst_IBUF                     |                7 |             27 |         3.86 |
+|  clk_wiz/inst/clk_out1 |                            | vga_to_hdmi/inst/encr/AR[0]  |               22 |             42 |         1.91 |
+|  clk_wiz/inst/clk_out1 |                            |                              |               36 |             95 |         2.64 |
++------------------------+----------------------------+------------------------------+------------------+----------------+--------------+
+
+

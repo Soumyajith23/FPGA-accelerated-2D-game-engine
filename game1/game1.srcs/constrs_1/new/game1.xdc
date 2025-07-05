@@ -1,0 +1,23 @@
+set_property IOSTANDARD TMDS_33 [get_ports {hdmi_tx_p[2]}]
+set_property IOSTANDARD TMDS_33 [get_ports {hdmi_tx_p[1]}]
+set_property IOSTANDARD TMDS_33 [get_ports {hdmi_tx_p[0]}]
+set_property IOSTANDARD TMDS_33 [get_ports hdmi_clk_p]
+set_property PACKAGE_PIN N15 [get_ports {hdmi_tx_p[2]}]
+set_property PACKAGE_PIN R16 [get_ports {hdmi_tx_p[1]}]
+set_property PACKAGE_PIN R15 [get_ports {hdmi_tx_p[0]}]
+set_property PACKAGE_PIN R14 [get_ports hdmi_clk_p]
+set_property IOSTANDARD LVCMOS33 [get_ports rst]
+set_property PACKAGE_PIN V2 [get_ports rst]
+set_property PACKAGE_PIN F14 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+
+set_property PACKAGE_PIN K1 [get_ports pause]
+set_property IOSTANDARD LVCMOS33 [get_ports pause]
+
+set_property PACKAGE_PIN H2 [get_ports btn_left]
+set_property PACKAGE_PIN J1 [get_ports btn_right]
+set_property IOSTANDARD LVCMOS33 [get_ports btn_left]
+set_property IOSTANDARD LVCMOS33 [get_ports btn_right]
+
+set_property PACKAGE_PIN J5 [get_ports btn_jump]
+set_property IOSTANDARD LVCMOS33 [get_ports btn_jump]
