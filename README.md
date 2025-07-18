@@ -130,7 +130,9 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ## 📷 Screenshots
 
-1. Running Score:
+1. Score:
+2. ![score](https://github.com/user-attachments/assets/76fe174a-7cc9-44c6-9d82-9ef7ddaffe4f)
+
 > ![Adobe Scan 05 Jul 2025_page-0001](https://github.com/user-attachments/assets/bde902ab-c571-41e9-97f3-212b399781c4)
 2. Random Tiles:
 
