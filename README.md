@@ -55,6 +55,7 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 - Up to 32 tiles of 32×32 pixels.
 - Tile map defines layout (20×15).
 - Uses BRAM for storage and dual-port RAM for performance.
+<img width="468" height="306" alt="image" src="https://github.com/user-attachments/assets/aa89545f-1e27-4c83-97fa-baab338b169b" />
 
 ### Rendering Engine
 
