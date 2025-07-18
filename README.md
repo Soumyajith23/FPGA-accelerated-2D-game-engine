@@ -128,9 +128,19 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ---
 
-Screenshots And Demos
+Screenshots 
 <p align="center"> <img src="https://github.com/user-attachments/assets/bde902ab-c571-41e9-97f3-212b399781c4" alt="Controlling the Ball and Updating Score" width="400"/> &nbsp;&nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/a9955859-a16d-4277-8533-c1cb6984a8e4" alt="Random Tiles" width="400"/> </p> <p align="center"> <b>Left:</b> Controlling the Ball and Updating Score &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>Right:</b> Random Tiles </p>
+
+Demos
+
+
+https://github.com/user-attachments/assets/c05d2363-7ebc-49ac-8049-93125daeaadc
+
+
+
 ## File Structure (suggested)
+
+
 
 ```bash
 project/
