@@ -34,7 +34,8 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ## Major Modules
 
-###VGA Controller
+### VGA Controller
+
 The VGA Controller generates synchronization and video timing signals required for displaying graphics on a monitor. Since the Boolean Board lacks a VGA port, an HDMI IP core is used to convert VGA-style signals to HDMI, allowing output on modern displays.
 
 What It Does
