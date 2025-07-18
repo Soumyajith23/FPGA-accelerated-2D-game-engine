@@ -51,7 +51,7 @@ These signals are sent to the HDMI IP core to drive an external monitor.
 <img width="540" height="309" alt="image" src="https://github.com/user-attachments/assets/a77db484-e2e6-4131-bd81-98e148d8c8e4" />
 
 
-### Scrolling Background  
+### 2. Scrolling Background  
 
 The Scrolling Background System enables infinite horizontal scrolling by repeating mirrored tile blocks. A 128-pixel-wide strip is stored in Single-Port ROM (from BRAM) and duplicated to cover the screen with 5 blocks, creating a seamless scrolling effect.
 
