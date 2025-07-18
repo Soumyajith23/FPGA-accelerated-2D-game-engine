@@ -131,18 +131,13 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 Screenshots 
 <p align="center"> <img src="https://github.com/user-attachments/assets/bde902ab-c571-41e9-97f3-212b399781c4" alt="Controlling the Ball and Updating Score" width="400"/> &nbsp;&nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/a9955859-a16d-4277-8533-c1cb6984a8e4" alt="Random Tiles" width="400"/> </p> <p align="center"> <b>Left:</b> Controlling the Ball and Updating Score &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>Right:</b> Random Tiles </p>
 
-Demos
-
-
-https://github.com/user-attachments/assets/c05d2363-7ebc-49ac-8049-93125daeaadc
-
-
-
-https://github.com/user-attachments/assets/035ffcde-33b4-41a0-b97d-2e362f18f6ca
-
-
-
-https://github.com/user-attachments/assets/1dc08ec6-dac9-4004-9a8b-79212d92a215
+ Demos
+1️ UART Receiver Demo
+<p align="center"> <video src="https://github.com/user-attachments/assets/c05d2363-7ebc-49ac-8049-93125daeaadc" width="500" controls></video> </p>
+2️ Basic Controlling and Gameplay
+<p align="center"> <video src="https://github.com/user-attachments/assets/035ffcde-33b4-41a0-b97d-2e362f18f6ca" width="500" controls></video> </p>
+3️ Random Tiles Generation
+<p align="center"> <video src="https://github.com/user-attachments/assets/1dc08ec6-dac9-4004-9a8b-79212d92a215" width="500" controls></video> </p>
 
 
 
