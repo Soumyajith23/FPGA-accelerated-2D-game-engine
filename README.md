@@ -42,13 +42,9 @@ What It Does
 Implements VGA 640×480 @ 60 Hz standard (based on VESA spec)
 
 Produces key signals:
-
 H sync – Horizontal sync pulse
-
 V sync – Vertical sync pulse
-
 V en – Video enable (active during visible area)
-
 RGB – Pixel color data
 
 These signals are sent to the HDMI IP core to drive an external monitor.
