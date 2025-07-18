@@ -51,11 +51,12 @@ These signals are sent to the HDMI IP core to drive an external monitor.
 <img width="540" height="309" alt="image" src="https://github.com/user-attachments/assets/a77db484-e2e6-4131-bd81-98e148d8c8e4" />
 
 
-### Scrolling Background
+### Scrolling Background  
 
-- ROM-based mirrored 128-pixel blocks.
-- 4-bit CLUT maps to RGB565.
-- Infinite seamless horizontal scrolling.
+The Scrolling Background System enables infinite horizontal scrolling by repeating mirrored tile blocks. A 128-pixel-wide strip is stored in Single-Port ROM (from BRAM) and duplicated to cover the screen with 5 blocks, creating a seamless scrolling effect.
+
+The system uses a 4-bit Color Lookup Table (CLUT) to map color indices to RGB565 (16-bit) format for rendering.
+
 
 <p align="left"> <img src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" alt="Scrolling Background Image 1" height="280" /> &nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/c0730c6f-372f-49c7-826d-c94c0bcf7092" alt="Scrolling Background Image 2" height="280" /> </p>
 
