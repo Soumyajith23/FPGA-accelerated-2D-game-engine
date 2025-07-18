@@ -39,6 +39,8 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 - Standard 640×480 @ 60Hz VGA timing.
 - Outputs: `HSYNC`, `VSYNC`, `RGB`, `V_EN`.
 - Uses VGA-to-HDMI IP to support modern displays.
+<img width="540" height="309" alt="image" src="https://github.com/user-attachments/assets/a77db484-e2e6-4131-bd81-98e148d8c8e4" />
+
 
 ### Scrolling Background
 
