@@ -131,6 +131,9 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 ## 📷 Screenshots
 
 > *(Add sample screenshots of gameplay, waveform, tile editor if possible)*
+> ![Adobe Scan 05 Jul 2025_page-0001](https://github.com/user-attachments/assets/bde902ab-c571-41e9-97f3-212b399781c4)
+
+![Adobe Scan 05 Jul 2025 (1)_page-0001](https://github.com/user-attachments/assets/a9955859-a16d-4277-8533-c1cb6984a8e4)
 
 ---
 
