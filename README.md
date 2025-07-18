@@ -1,4 +1,4 @@
-# 🕹️ FPGA 2D Game Engine
+# FPGA 2D Game Engine
 
 **Authors**: Kishor Kunal, Soumyajit Halder  
 **Date**: July 5, 2025  
@@ -9,13 +9,13 @@
 
 ---
 
-## 📌 Abstract
+## Abstract
 
 This project implements a 2D endless-runner-style game engine entirely in Verilog. It is optimized for real-time performance on resource-constrained FPGA hardware, with a modular architecture supporting background scrolling, tile rendering, animation, and input handling. The engine also includes procedural generation and audio output — offering a complete retro game experience built from the ground up in hardware.
 
 ---
 
-## 🧩 System Architecture
+## System Architecture
 
 - **VGA Controller**: Outputs 640×480@60Hz video using HDMI.
 - **Scrolling Background**: Infinite horizontal parallax-style movement using tile repetition.
@@ -32,58 +32,58 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ---
 
-## 💻 Major Modules
+## Major Modules
 
-### 📺 VGA Controller
+### VGA Controller
 
 - Standard 640×480 @ 60Hz VGA timing.
 - Outputs: `HSYNC`, `VSYNC`, `RGB`, `V_EN`.
 - Uses VGA-to-HDMI IP to support modern displays.
 
-### 🌄 Scrolling Background
+### Scrolling Background
 
 - ROM-based mirrored 128-pixel blocks.
 - 4-bit CLUT maps to RGB565.
 - Infinite seamless horizontal scrolling.
 
-### 🧱 Tile Management
+### Tile Management
 
 - Up to 32 tiles of 32×32 pixels.
 - Tile map defines layout (20×15).
 - Uses BRAM for storage and dual-port RAM for performance.
 
-### 🎨 Rendering Engine
+### Rendering Engine
 
 - FIFO-based line buffer writes 32 pixels per cycle.
 - Cross-clock domain design.
 - 128× faster rendering using burst writes.
 - Hardware scrolling support via FSM.
 
-### 🧬 Procedural Generator
+### Procedural Generator
 
 - Uses LFSRs to generate height and tile types.
 - Probability-controlled tile selection.
 - Enforces constraints like max 2 empty tiles.
 
-### 🔊 Audio System
+### Audio System
 
 - 100 MHz-driven square wave for buzzer output.
 - Precomputed half-periods for notes.
 - Plays looping 16-note melody.
 
-### ⌨️ UART Input
+### UART Input
 
 - Reads player input from PC keyboard.
 - UART receiver FSM decodes start/data/stop bits.
 - Uses double-registering to avoid metastability.
 
-### ⏲️ Timer System
+### Timer System
 
 - BCD timer increments every second.
 - Compatible with 7-segment or bitmap display.
 - Pause and reset functionality included.
 
-### 📊 UI Score Display
+### UI Score Display
 
 - Score shown via 4-digit 32×32 bitmaps.
 - `.coe` initialized BRAMs for digits 0–9.
@@ -91,7 +91,7 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ---
 
-## 🛠️ Tools & Resources
+## Tools & Resources
 
 - **Vivado**: HDL simulation, timing analysis, ILA debugging.
 - **JavaScript Applet**: For designing tiles and exporting `.coe` files.
@@ -103,7 +103,7 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ---
 
-## 🎯 Challenges Faced
+## Challenges Faced
 
 1. **Ideation Overhead** – Designing the architecture from scratch.
 2. **Setup/Hold Violations** – Early code had timing issues.
@@ -112,7 +112,7 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ---
 
-## 📚 Major Learnings
+## Major Learnings
 
 - Gained deep insight into pipelined hardware logic and FSMs.
 - Developed cross-domain communication safely.
@@ -120,7 +120,7 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ---
 
-## 🧠 AI Usage
+## AI Usage
 
 - Assisted with LaTeX formatting and structuring.
 - Helped design the `.coe` generator tool.
@@ -128,19 +128,13 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ---
 
-## 📷 Screenshots
-
-1. Score:
-2. ![score](https://github.com/user-attachments/assets/76fe174a-7cc9-44c6-9d82-9ef7ddaffe4f)
-
-> ![Adobe Scan 05 Jul 2025_page-0001](https://github.com/user-attachments/assets/bde902ab-c571-41e9-97f3-212b399781c4)
+📸 Screenshots And Demos
+1. Controlling the Ball and Updating Score:
+<p align="center"> <img src="https://github.com/user-attachments/assets/bde902ab-c571-41e9-97f3-212b399781c4" alt="Controlling the Ball and Updating Score" width="400"/> </p>
 2. Random Tiles:
+<p align="center"> <img src="https://github.com/user-attachments/assets/a9955859-a16d-4277-8533-c1cb6984a8e4" alt="Random Tiles" width="400"/> </p>
 
-![Adobe Scan 05 Jul 2025 (1)_page-0001](https://github.com/user-attachments/assets/a9955859-a16d-4277-8533-c1cb6984a8e4)
-
----
-
-## 📁 File Structure (suggested)
+## File Structure (suggested)
 
 ```bash
 project/
