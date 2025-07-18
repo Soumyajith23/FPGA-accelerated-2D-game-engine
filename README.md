@@ -47,6 +47,8 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 - ROM-based mirrored 128-pixel blocks.
 - 4-bit CLUT maps to RGB565.
 - Infinite seamless horizontal scrolling.
+<img width="418" height="325" alt="image" src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" />
+
 
 ### Tile Management
 
