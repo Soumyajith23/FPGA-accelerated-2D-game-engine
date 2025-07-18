@@ -62,9 +62,16 @@ The system uses a 4-bit Color Lookup Table (CLUT) to map color indices to RGB565
 
 ### Tile Management
 
-- Up to 32 tiles of 32×32 pixels.
-- Tile map defines layout (20×15).
-- Uses BRAM for storage and dual-port RAM for performance.
+The Tile Management System handles rendering tile-based maps for the game background. Each tile is a 32×32 pixel block, where every pixel is represented by a 4-bit color index. This index is mapped to an RGB565 color using a Color Lookup Table (CLUT) implemented in ROM.
+
+The system supports up to 32 unique tiles (5-bit indices) and organizes them through a Tile Map, which references these tiles to form the complete background.
+Key Components:  
+Tile Data:  
+Stored in Single-Port ROM, containing pixel data for all 32 tiles.  
+Tile Map:  
+Stored in Single-Port ROM, 5-bit width, 315 entries.  
+Represents 20×15 tiles (300 total) for a full screen.  
+Includes 15 extra entries reserved for seamless scrolling.  
 <img width="468" height="306" alt="image" src="https://github.com/user-attachments/assets/aa89545f-1e27-4c83-97fa-baab338b169b" />
 
 ### Rendering Engine
