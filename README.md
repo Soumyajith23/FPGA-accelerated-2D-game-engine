@@ -36,14 +36,22 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 ### VGA Controller
 
- The VGA controller is responsible for generating synchronization and timing signals to correctly display video on a monitor.
- Although the Boolean Board does not have a native VGA port, it includes an HDMI port. We use a VGA-to-HDMI converter
- IP to transform the VGA-style signal output to HDMI for compatibility with modern displays.
+ The VGA Controller generates synchronization and video timing signals required for displaying graphics on a monitor. Since the Boolean Board lacks a VGA port, an HDMI IP core is used to convert VGA-style signals to HDMI, allowing output on modern displays.
 
-- Standard 640×480 @ 60Hz VGA timing.
-- Outputs: `HSYNC`, `VSYNC`, `RGB`, `V_EN`.
-- Uses VGA-to-HDMI IP to support modern displays.
+What It Does
+Implements VGA 640×480 @ 60 Hz standard (based on VESA spec)
 
+Produces key signals:
+
+H sync – Horizontal sync pulse
+
+V sync – Vertical sync pulse
+
+V en – Video enable (active during visible area)
+
+RGB – Pixel color data
+
+These signals are sent to the HDMI IP core to drive an external monitor.
 
 
 <img width="540" height="309" alt="image" src="https://github.com/user-attachments/assets/a77db484-e2e6-4131-bd81-98e148d8c8e4" />
