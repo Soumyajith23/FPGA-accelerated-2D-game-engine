@@ -48,8 +48,7 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 - 4-bit CLUT maps to RGB565.
 - Infinite seamless horizontal scrolling.
 
-<p align="center"><img width="418" height="325" alt="image" src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" /> &nbsp;&nbsp;&nbsp; <img width="418" height="325" alt="image" src="https://github.com/user-attachments/assets/c0730c6f-372f-49c7-826d-c94c0bcf7092" /> </p> <p align="center"> <b>Left:</b> Controlling the Ball and Updating Score &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>Right:</b> Random Tiles </p>
-
+<p align="center"><img width="418" height="325" alt="image" src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" /> &nbsp;&nbsp;&nbsp; <img width="418" height="325" alt="image" src="https://github.com/user-attachments/assets/c0730c6f-372f-49c7-826d-c94c0bcf7092" /> </p> 
 
 ### Tile Management
 
