@@ -77,57 +77,120 @@ Includes 15 extra entries reserved for seamless scrolling.
 ### 4. Rendering Engine  
 
 Key Features of the Rendering Pipeline  
-Asymmetric FIFO System  
+- Asymmetric FIFO System  
 Uses 4 asymmetric FIFOs to write 128 bits (32 pixels) in one cycle, while enabling 4-bit pixel reads at the pixel clock rate.  
 
-High-Speed Framebuffer Updates  
+- High-Speed Framebuffer Updates  
 Cross-clock design writes to the framebuffer at 4× pixel clock speed, enabling a 640-pixel line update in just 20 system cycles.  
 
-Massive Write Throughput  
+- Massive Write Throughput  
 Achieves up to 128× faster write speed compared to naive pixel-clock-based designs.  
 
-Efficient Memory Usage via CLUT  
+- Efficient Memory Usage via CLUT  
 Stores 4-bit color indices, mapped to RGB565 through a CLUT for memory efficiency without visual loss.  
 
-Hardware Scrolling Support  
+- Hardware Scrolling Support  
 Dedicated FSM enables smooth hardware scrolling with programmable offsets, even for 32-pixel-wide tile maps.  
 
-Parallelism & Timing Decoupling    
+- Parallelism & Timing Decoupling    
 FIFO buffering and decoupled clocks allow parallel tile decoding and pixel rendering, boosting scalability and efficiency.  
 <img width="768" height="590" alt="Screenshot 2025-07-19 034024" src="https://github.com/user-attachments/assets/86c5a59e-aeea-4fa1-bca5-a206f734b0d7" />
 
 
 
 
-### Procedural Generator
+### 5. Procedural Generator
 
-- Uses LFSRs to generate height and tile types.
-- Probability-controlled tile selection.
-- Enforces constraints like max 2 empty tiles.
+The Procedural Level Generator creates dynamic terrain using Linear Feedback Shift Registers (LFSRs) for pseudo-randomness in both tile appearance and height.  
 
-### Audio System
+- 5-bit LFSR: Generates a pseudo-random height for each new tile per frame cycle.  
 
-- 100 MHz-driven square wave for buzzer output.
-- Precomputed half-periods for notes.
-- Plays looping 16-note melody.
+- Height Clamping: Ensures tile height stays within a range that the player can jump (typically within one tile unit).  
 
-### UART Input
+- Tile Selection: Tile type is probabilistically chosen based on LFSR output.  
 
-- Reads player input from PC keyboard.
-- UART receiver FSM decodes start/data/stop bits.
-- Uses double-registering to avoid metastability.
+- Placement Control: Another LFSR decides whether a tile should appear at a given position, ensuring at most two consecutive empty tiles.
 
-### Timer System
+<img src="https://github.com/user-attachments/assets/a9955859-a16d-4277-8533-c1cb6984a8e4" alt="Random Tiles" width="400"/> 
 
-- BCD timer increments every second.
-- Compatible with 7-segment or bitmap display.
-- Pause and reset functionality included.
+### 6. Audio System
 
-### UI Score Display
+Generates melodies using a passive buzzer by producing square waves at specific note frequencies, driven by a 100 MHz FPGA clock.
 
-- Score shown via 4-digit 32×32 bitmaps.
-- `.coe` initialized BRAMs for digits 0–9.
-- Bitmapped directly on VGA frame.
+**How It Works**
+- Uses precomputed half-period values for each musical note.
+- Example: E5 (659.3 Hz) → toggles every 75,871 cycles.
+- Two counters:
+  - count1 → Tracks note duration.
+  - count2 → Toggles buzzer for square wave generation.
+- Loops through a 16-note melody (easily customizable).
+
+**Features**
+- Accurate square-wave generation using 100 MHz clock.
+- Compatible with standard passive buzzers.
+- Custom melodies supported via configurable note tables.
+
+
+### 7. UART Input Handler
+Handles player input via UART communication from a PC keyboard connected to the FPGA.
+
+**How It Works**
+- FPGA acts as UART receiver, interpreting serial data as player commands.
+- Operates on 100 MHz clock with a baud rate of 9600 (CLKSPERBIT ≈ 10,417).
+- UART frame: Start bit, 8 data bits (LSB first), Stop bit.
+
+**State Machine**
+- sIDLE → Waits for start bit (logic 0).
+- sRXSTARTBIT → Validates start bit at midpoint.
+- sRXDATABITS → Samples 8 data bits.
+- sRXSTOPBIT → Validates stop bit (logic 1).
+- sCLEANUP → Signals valid byte and resets.
+
+**Features**
+- Double-registering for metastability protection.
+- Received byte available on oRxByte.
+- oRxDV signal pulses high for one clock on valid data.
+
+
+
+### 8. BCD-Based Timer System
+Implements a Binary-Coded Decimal (BCD) timer to track time in seconds using a 100 MHz FPGA clock.
+
+**How It Works**
+- Counts from 0000 to 9999 in BCD format (16-bit output).
+- Uses a 28-bit clock divider to convert 100 MHz to 1 Hz.
+- Time is output as four 4-bit BCD digits:
+  [15:12]:[11:8]:[7:4]:[3:0] → D3:D2:D1:D0.
+
+**Features**
+- Pause control: Halts counting when pause is asserted.
+- Reset control: Clears counter and clock divider.
+- Decimal overflow handling: Rolls digits from 9→0 with carry.
+- Compatible with 4-digit 7-segment display for human-readable output.
+
+
+### UI System (Score Display)
+Displays the player’s score on screen using a 16-bit BCD counter and bitmap-based digit rendering.
+
+**How It Works**
+- Score increments every 100 million clock cycles (≈1 second) when not paused.
+- Stored as a 16-bit BCD value split into 4 digits:
+  [15:12] [11:8] [7:4] [3:0] → Thousands to Units.
+- Score display uses 32×32 monochrome bitmaps for each digit (0–9).
+
+**Components**
+- Timer Counter: Updates score in BCD format with carry logic.
+- Digit Bitmap Mapper: Converts digits to 32-bit scanlines for display.
+- Monochrome Bitmap BRAMs: 10 BRAMs preloaded with .coe bitmaps for digits.
+- Display Renderer: Maps digit bitmaps to screen pixels during VGA rendering.
+
+**Display Details**
+- Score appears at the top center of the screen.
+- Digit positions fixed horizontally (x = 384, 416, 448, 480).
+- Visible when y_pix ∈ [32, 64).
+- Horizontal pixel index computed as: digit_index = ~(x_pix - offset).
+
+![score](https://github.com/user-attachments/assets/aee1f5df-455e-4277-8e29-ebddf09623b7)
 
 ---
 
@@ -193,14 +256,4 @@ https://github.com/user-attachments/assets/9c48661f-54fe-47e2-8bdf-e2fc54b951d7
 
 
 
-## File Structure (suggested)
 
-
-
-```bash
-project/
-├── src/                   # Verilog modules
-├── coe/                   # Tile/sprite bitmap .coe files
-├── js_tile_designer/      # JavaScript app
-├── docs/                  # Report / README
-└── constraints/           # XDC / pin mappings
