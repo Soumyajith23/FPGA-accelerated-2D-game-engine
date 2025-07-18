@@ -60,7 +60,7 @@ The system uses a 4-bit Color Lookup Table (CLUT) to map color indices to RGB565
 
 <p align="left"> <img src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" alt="Scrolling Background Image 1" height="280" /> &nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/c0730c6f-372f-49c7-826d-c94c0bcf7092" alt="Scrolling Background Image 2" height="280" /> </p>
 
-### Tile Management
+### 3. Tile Management
 
 The Tile Management System handles rendering tile-based maps for the game background. Each tile is a 32×32 pixel block, where every pixel is represented by a 4-bit color index. This index is mapped to an RGB565 color using a Color Lookup Table (CLUT) implemented in ROM.
 
@@ -74,12 +74,30 @@ Represents 20×15 tiles (300 total) for a full screen.
 Includes 15 extra entries reserved for seamless scrolling.  
 <img width="468" height="306" alt="image" src="https://github.com/user-attachments/assets/aa89545f-1e27-4c83-97fa-baab338b169b" />
 
-### Rendering Engine
+### 4. Rendering Engine  
 
-- FIFO-based line buffer writes 32 pixels per cycle.
-- Cross-clock domain design.
-- 128× faster rendering using burst writes.
-- Hardware scrolling support via FSM.
+Key Features of the Rendering Pipeline  
+Asymmetric FIFO System  
+Uses 4 asymmetric FIFOs to write 128 bits (32 pixels) in one cycle, while enabling 4-bit pixel reads at the pixel clock rate.  
+
+High-Speed Framebuffer Updates  
+Cross-clock design writes to the framebuffer at 4× pixel clock speed, enabling a 640-pixel line update in just 20 system cycles.  
+
+Massive Write Throughput  
+Achieves up to 128× faster write speed compared to naive pixel-clock-based designs.  
+
+Efficient Memory Usage via CLUT  
+Stores 4-bit color indices, mapped to RGB565 through a CLUT for memory efficiency without visual loss.  
+
+Hardware Scrolling Support  
+Dedicated FSM enables smooth hardware scrolling with programmable offsets, even for 32-pixel-wide tile maps.  
+
+Parallelism & Timing Decoupling    
+FIFO buffering and decoupled clocks allow parallel tile decoding and pixel rendering, boosting scalability and efficiency.  
+<img width="768" height="590" alt="Screenshot 2025-07-19 034024" src="https://github.com/user-attachments/assets/86c5a59e-aeea-4fa1-bca5-a206f734b0d7" />
+
+
+
 
 ### Procedural Generator
 
