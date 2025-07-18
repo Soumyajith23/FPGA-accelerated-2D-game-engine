@@ -138,7 +138,7 @@ Screenshots
 
  Demos
 1️ UART Receiver Demo
-<p align="center"> <video src="https://github.com/user-attachments/assets/c05d2363-7ebc-49ac-8049-93125daeaadc" width="500" controls></video> </p>
+<p align="center"> <video src="https://github.com/user-attachments/assets/c05d2363-7ebc-49ac-8049-93125daeaadc" width="200" controls></video> </p>
 2️ Basic Controlling and Gameplay
 <p align="center"> <video src="https://github.com/user-attachments/assets/035ffcde-33b4-41a0-b97d-2e362f18f6ca" width="500" controls></video> </p>
 3️ Random Tiles Generation
