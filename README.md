@@ -50,7 +50,6 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 
 <p align="center"> <img src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" alt="Scrolling Background Image 1" height="325"/> &nbsp;&nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/c0730c6f-372f-49c7-826d-c94c0bcf7092" alt="Scrolling Background Image 2" height="325"/> </p>
 
-
 ### Tile Management
 
 - Up to 32 tiles of 32×32 pixels.
