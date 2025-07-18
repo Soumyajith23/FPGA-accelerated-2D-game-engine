@@ -48,7 +48,7 @@ This project implements a 2D endless-runner-style game engine entirely in Verilo
 - 4-bit CLUT maps to RGB565.
 - Infinite seamless horizontal scrolling.
 
-<p align="center"> <img src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" alt="Scrolling Background Image 1" height="300" /> &nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/c0730c6f-372f-49c7-826d-c94c0bcf7092" alt="Scrolling Background Image 2" height="300" /> </p>
+<p align="center"> <img src="https://github.com/user-attachments/assets/88f3132c-5775-4603-b35f-1160ced14e6c" alt="Scrolling Background Image 1" height="280" /> &nbsp;&nbsp; <img src="https://github.com/user-attachments/assets/c0730c6f-372f-49c7-826d-c94c0bcf7092" alt="Scrolling Background Image 2" height="280" /> </p>
 
 ### Tile Management
 
